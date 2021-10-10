@@ -1,12 +1,11 @@
-import PCard from 'lib/Components/Primal/PCard/PCard';
+import Modal from 'lib/Components/Primal/Modal/Modal';
 
 
 const App = () => {
-  return (<div className="App">
-    <header className="App-header">
-      <PCard title={"Hello"} text={"react"} />
-    </header>
-  </div>)
+  return (
+    <>
+      <Modal title={"My modal title"} body={"lorem 4"} />
+    </>)
 }
 
 export default App;
