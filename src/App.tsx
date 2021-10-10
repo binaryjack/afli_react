@@ -1,11 +1,10 @@
-import { MyView } from 'lib/Components/MyView/MyView';
+import PCard from 'lib/Components/Primal/PCard/PCard';
 
 
 const App = () => {
   return (<div className="App">
     <header className="App-header">
-      <h1>hello React 3</h1>
-      <MyView />
+      <PCard title={"Hello"} text={"react"} />
     </header>
   </div>)
 }

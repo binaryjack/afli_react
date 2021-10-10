@@ -1,6 +1,7 @@
 
 import { FC, useState } from "react";
 import { MyArrComponent } from '../MyArrComponent/MyArrComponent';
+import { TodoList } from '../TodoList/TodoList';
 
 
 
@@ -14,6 +15,9 @@ export const MyView: FC = () => {
   return (
     <>
       <MyArrComponent arr={array} fn={calc} />
+
+
+      <TodoList />
     </>
   );
 };
