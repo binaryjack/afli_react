@@ -1,10 +1,13 @@
-import Modal from 'lib/Components/Primal/Modal/Modal';
+import PExpander from 'lib/Components/Primal/PExpander/PExpander';
 
 
 const App = () => {
   return (
     <>
-      <Modal title={"My modal title"} body={"lorem 4"} />
+      {/* <Modal title={"My modal title"} body={"lorem 4"} /> */}
+
+      <PExpander />
+
     </>)
 }
 

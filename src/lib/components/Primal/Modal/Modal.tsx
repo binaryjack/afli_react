@@ -18,7 +18,7 @@ const Modal: FC<ModalProps> = ({ title, body }) => {
         <>
             <button
                 onClick={toggleModal}
-                className="p-btn-modal">Open</button>
+                className="p-btn-modal btn btn-info">Open</button>
             {modal &&
                 <div className="p-overlay">
                     <div className="p-modal">
