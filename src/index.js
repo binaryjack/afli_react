@@ -3,10 +3,13 @@ import ReactDOM from "react-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import "./index.css";
+import ThemeContextProvider from './lib/Context/Theme/ThemeContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeContextProvider>
+      <App />
+    </ThemeContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
@@ -14,3 +17,4 @@ ReactDOM.render(
 if (module.hot) {
   module.hot.accept()
 }
+
