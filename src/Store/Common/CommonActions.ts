@@ -1,7 +1,6 @@
-export enum CommonActionTypes : {
-    increase = 'INCREASE',
-        decrease : 'DECREASE',
-
+export enum CommonActionTypes {
+    Increase = 'INCREASE',
+    Decrease = 'DECREASE',
 }
 
 export type CommonActions = {
