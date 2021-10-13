@@ -1,3 +1,4 @@
+import Version from 'lib/Compositions/Version/Version';
 import { FC, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import "./Navbar.css";
@@ -40,6 +41,8 @@ const Navbar: FC = () => {
                     </NavLink>
                 </ul>
             }
+            <div className="nav-version">  <Version /></div>
+
             <button onClick={onToggleManu} className="btn btn-secondary">BTN</button>
 
         </nav>)
