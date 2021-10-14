@@ -1,11 +1,10 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 interface Props {
   name: string;
 }
 
 export const MyComponent: FC<Props> = (props) => {
-
   return (
     <>
       <div>{props.name}</div>
@@ -13,19 +12,8 @@ export const MyComponent: FC<Props> = (props) => {
   );
 };
 
-
-interface BtnProps {
-}
+interface BtnProps {}
 
 export const CButton: FC<BtnProps> = (props) => {
-
-
-  return (
-    <>
-
-    </>
-  );
+  return <></>;
 };
-
-
-

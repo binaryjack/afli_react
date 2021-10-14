@@ -1,20 +1,20 @@
 .todo-card {
-    background: gray;
-    min-width: 500px;
-    min-height: 400px;
+  background: gray;
+  min-width: 500px;
+  min-height: 400px;
 
-    h1 {
-        display: flex;
-        justify-content: center;
-        padding: 4px;
-    }
+  h1 {
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+  }
 
-    .todo-card-input {
-        padding: 4px;
-        display: flex;
-        position: relative;
-        align-content: center;
-        justify-items: center;
-        background: lightcyan;
-    }
+  .todo-card-input {
+    padding: 4px;
+    display: flex;
+    position: relative;
+    align-content: center;
+    justify-items: center;
+    background: lightcyan;
+  }
 }

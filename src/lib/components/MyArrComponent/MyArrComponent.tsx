@@ -1,37 +1,29 @@
-
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState } from 'react';
 import { CsUl } from '../CsUl/CsUl';
 
 interface MyArrProps {
-    arr: number[];
-    fn: (val: number) => boolean;
+  arr: number[];
+  fn: (val: number) => boolean;
 }
 
-
-
 export const MyArrComponent: FC<MyArrProps> = ({ arr, fn }) => {
+  const [newArr, setNewArr] = useState<number[]>([]);
 
-    const [newArr, setNewArr] = useState<number[]>([]);
+  useEffect(() => {
+    console.log('use effect');
+    const tempArray: number[] = [];
 
+    setNewArr([]);
+    for (let i = 0; i < arr.length; i++) {
+      if (fn(arr[i])) {
+        console.log(arr[i]);
+        tempArray.push(arr[i]);
+      }
+    }
+    setNewArr(tempArray);
 
-    useEffect(() => {
-        console.log("use effect");
-        const tempArray: number[] = [];
+    return console.log('dispose effect');
+  }, [arr, fn, setNewArr]);
 
-        setNewArr([]);
-        for (let i = 0; i < arr.length; i++) {
-            if (fn(arr[i])) {
-                console.log(arr[i]);
-                tempArray.push(arr[i]);
-            }
-        }
-        setNewArr(tempArray);
-
-        return (
-            console.log("dispose effect"));
-    }, [arr, fn, setNewArr]);
-
-    return (
-        <CsUl arr={newArr} />
-    );
+  return <CsUl arr={newArr} />;
 };

@@ -1,13 +1,12 @@
 export enum CommonActionTypes {
-    Increase = 'INCREASE',
-    Decrease = 'DECREASE',
+  Increase = 'INCREASE',
+  Decrease = 'DECREASE',
 }
 
 export type CommonActions = {
-    type: CommonActionTypes;
-    payload: any;
-}
+  type: CommonActionTypes;
+  payload: any;
+};
 
-
-export const Actions = () => { };
+export const Actions = () => {};
 //
