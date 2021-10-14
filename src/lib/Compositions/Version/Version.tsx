@@ -1,12 +1,16 @@
 import { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ICommonState } from 'Store/Common/CommonReducer';
-import { CommonActionTypes } from 'Store/Common/CommonActions';
-import PTextBox from 'lib/Components/Primal/PTextBox/PTextBox';
+import { ICommonState } from 'Store/common/reducer';
+import { CommonActionTypes } from 'Store/common/actions';
+import PTextBox from 'lib/components/Primal/PTextBox/PTextBox';
 
 const Version: FC = () => {
   const versionNumber = useSelector<ICommonState, number>((state) =>
-    state ? state.version : 0,
+   ({
+...state.version,
+...state.
+
+   })
   );
   const dispatch = useDispatch();
   const incrFunc = () => {
@@ -15,6 +19,7 @@ const Version: FC = () => {
       payload: 1,
     });
   };
+
   const decrFunc = () => {
     dispatch({
       type: CommonActionTypes.Decrease,

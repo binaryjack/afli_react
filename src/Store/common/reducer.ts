@@ -1,8 +1,4 @@
-import { CommonActions, CommonActionTypes } from './CommonActions';
-
-export interface ICommonState {
-  version: number;
-}
+import { CommonActions, CommonActionTypes, ICommonState } from './types';
 
 const INITIAL_STATE: ICommonState = {
   version: 1,
@@ -23,6 +19,10 @@ const CommonReducer = (
       return {
         ...state,
         version: state.version - action.payload,
+      };
+    default:
+      return {
+        ...state,
       };
   }
 };

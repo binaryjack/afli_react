@@ -1,5 +1,5 @@
-import BtnToggle from 'lib/Components/BtnToggle/BtnToggle';
-import Navbar from 'lib/Components/Primal/Navbar/Navbar';
+import BtnToggle from 'lib/components/BtnToggle/BtnToggle';
+import Navbar from 'lib/components/Primal/Navbar/Navbar';
 import Contact from 'Pages/Contact/Contact';
 import Home from 'Pages/Home/Home';
 import Projects from 'Pages/Projects/Projects';

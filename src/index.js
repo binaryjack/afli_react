@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import ThemeContextProvider from './lib/Context/Theme/ThemeContext';
-import { CommonStore } from './Store/Store';
+import { CommonStore } from './Store/index';
+
 import App from './App';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
