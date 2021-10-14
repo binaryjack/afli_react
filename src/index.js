@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import ThemeContextProvider from './lib/context/theme/ThemeContext';
-import { CommonStore } from './Store/index';
+import { CommonStore } from './store/index';
 
 import App from './App';
 
