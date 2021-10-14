@@ -1,12 +1,12 @@
 import { FC, useEffect, useState } from 'react';
-import { CsUl } from '../CsUl/csUl';
+import CsUl from '../CsUl/CsUl';
 
 interface MyArrProps {
   arr: number[];
   fn: (val: number) => boolean;
 }
 
-export const MyArrComponent: FC<MyArrProps> = ({ arr, fn }) => {
+const MyArrComponent: FC<MyArrProps> = ({ arr, fn }) => {
   const [newArr, setNewArr] = useState<number[]>([]);
 
   useEffect(() => {
@@ -27,3 +27,5 @@ export const MyArrComponent: FC<MyArrProps> = ({ arr, fn }) => {
 
   return <CsUl arr={newArr} />;
 };
+
+export default MyArrComponent

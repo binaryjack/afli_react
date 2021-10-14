@@ -5,12 +5,6 @@
   "settings": { "react": { "version": "detect" } },
   "env": { "jest": true },
   "rules": {
-    //  "no-console": ["error", { "allow": ["info", "warn", "error"] }],
-    "spaced-comment": ["error", "always"],
-    "import/order": [
-      "error",
-      { "groups": [["builtin", "external"]], "newlines-between": "always" }
-    ],
     "import/named": "off",
     "react/prop-types": "off",
     "@typescript-eslint/no-unused-vars": "off",
