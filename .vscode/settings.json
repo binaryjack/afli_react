@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/src/es/index.html"
+    "livePreview.defaultPreviewPath": "/src/es/index.html",
+    "files.autoSave": "onWindowChange"
 }
