@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import './CardTitle.css';
+import './cardTitle.css';
 
 const CardTitle: FC = ({ children }) => {
   return <div className="card-title p-card-title">{children}</div>;

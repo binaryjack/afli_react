@@ -1,7 +1,7 @@
 import { IContextProps, ThemeContext } from 'lib/context/theme/ThemeContext';
 import { FC, useContext } from 'react';
-import '../../../Style/a-style.css';
-import './PTextBox.css';
+import '../../../style/a-style.css';
+import './pTextBox.css';
 
 type Props = {
   text: string;

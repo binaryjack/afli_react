@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import './TodoList.css';
+import './todoList.css';
 
 export type TodoItem = {
   id: string;
