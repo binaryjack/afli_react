@@ -2,16 +2,14 @@
   background: gray;
   min-width: 500px;
   min-height: 400px; }
-
-.todo-card h1 {
-  display: flex;
-  justify-content: center;
-  padding: 4px; }
-
-.todo-card .todo-card-input {
-  padding: 4px;
-  display: flex;
-  position: relative;
-  align-content: center;
-  justify-items: center;
-  background: lightcyan; }
+  .todo-card h1 {
+    display: flex;
+    justify-content: center;
+    padding: 4px; }
+  .todo-card .todo-card-input {
+    padding: 4px;
+    display: flex;
+    position: relative;
+    align-content: center;
+    justify-items: center;
+    background: lightcyan; }

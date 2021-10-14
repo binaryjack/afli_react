@@ -5,7 +5,7 @@
   "settings": { "react": { "version": "detect" } },
   "env": { "jest": true },
   "rules": {
-    "no-console": ["error", { "allow": ["info", "warn", "error"] }],
+    //  "no-console": ["error", { "allow": ["info", "warn", "error"] }],
     "spaced-comment": ["error", "always"],
     "import/order": [
       "error",

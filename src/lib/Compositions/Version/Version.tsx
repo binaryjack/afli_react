@@ -5,7 +5,9 @@ import { CommonActionTypes } from 'Store/Common/CommonActions';
 import PTextBox from 'lib/Components/Primal/PTextBox/PTextBox';
 
 const Version: FC = () => {
-  const versionNumber = useSelector((state: ICommonState) => state.version);
+  const versionNumber = useSelector<ICommonState, number>((state) =>
+    state ? state.version : 0,
+  );
   const dispatch = useDispatch();
   const incrFunc = () => {
     dispatch({
@@ -15,7 +17,7 @@ const Version: FC = () => {
   };
   const decrFunc = () => {
     dispatch({
-      type: CommonActionTypes.Increase,
+      type: CommonActionTypes.Decrease,
       payload: 1,
     });
   };

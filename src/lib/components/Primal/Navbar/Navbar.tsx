@@ -39,7 +39,6 @@ const Navbar: FC = () => {
         </ul>
       )}
       <div className="nav-version">
-        {' '}
         <Version />
       </div>
 

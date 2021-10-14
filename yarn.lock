@@ -5010,6 +5010,11 @@
     "address" "^1.0.1"
     "debug" "^2.6.0"
 
+"dev-tools@^0.1.6":
+  "integrity" "sha1-CR37dWevKehTBQ50NVXkeaKkrlA="
+  "resolved" "https://registry.npmjs.org/dev-tools/-/dev-tools-0.1.6.tgz"
+  "version" "0.1.6"
+
 "dezalgo@^1.0.0":
   "version" "1.0.3"
   dependencies:
@@ -11338,7 +11343,12 @@
     "css-unit-converter" "^1.1.1"
     "postcss-value-parser" "^3.3.0"
 
-"redux@^4.0.0", "redux@^4.1.1":
+"redux-devtools-extension@^2.13.9":
+  "integrity" "sha512-cNJ8Q/EtjhQaZ71c8I9+BPySIBVEKssbPpskBfsXqb8HJ002A3KRVHfeRzwRo6mGPqsm7XuHTqNSNeS1Khig0A=="
+  "resolved" "https://registry.npmjs.org/redux-devtools-extension/-/redux-devtools-extension-2.13.9.tgz"
+  "version" "2.13.9"
+
+"redux@^3.1.0 || ^4.0.0", "redux@^4.0.0", "redux@^4.1.1":
   "integrity" "sha512-hZQZdDEM25UY2P493kPYuKqviVwZ58lEmGQNeQ+gXa+U0gYPUBf7NKYazbe3m+bs/DzM/ahN12DbF+NG8i0CWw=="
   "resolved" "https://registry.npmjs.org/redux/-/redux-4.1.1.tgz"
   "version" "4.1.1"
@@ -11774,6 +11784,11 @@
     "neo-async" "^2.6.2"
     "schema-utils" "^3.0.0"
     "semver" "^7.3.2"
+
+"save-dev@^0.0.1-security":
+  "integrity" "sha512-k6knZTDNK8PKKbIqnvxiOveJinuw2LcQjqDoaorZWP9M5AR2EPsnpDeSbeoZZ0pHr5ze1uoaKdK8NBGQrJ34Uw=="
+  "resolved" "https://registry.npmjs.org/save-dev/-/save-dev-0.0.1-security.tgz"
+  "version" "0.0.1-security"
 
 "sax@~1.2.4":
   "integrity" "sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw=="

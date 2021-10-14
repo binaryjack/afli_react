@@ -12,16 +12,17 @@ const CommonReducer = (
   state: ICommonState = INITIAL_STATE,
   action: CommonActions,
 ) => {
+  console.log(`Type ${action.type}`, state.version, action.payload);
   switch (action.type) {
     case CommonActionTypes.Increase:
       return {
         ...state,
-        version: action.payload + 1,
+        version: state.version + action.payload,
       };
     case CommonActionTypes.Decrease:
       return {
         ...state,
-        version: action.payload - 1,
+        version: state.version - action.payload,
       };
   }
 };
