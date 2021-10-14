@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { CsLi } from '../CsLi/CsLi';
-import './CsUl.css';
+import './csUl.css';
 type CsUlProps = {
   arr: number[];
 };

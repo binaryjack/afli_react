@@ -1,4 +1,4 @@
-import { User } from 'Core/Entities/User';
+import { User } from 'core/entities/User';
 
 import { IUserState, UserActions, UserActionTypes } from './types';
 

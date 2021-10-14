@@ -1,16 +1,17 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, Reducer } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension'; // <= in order to use with
 import CommonReducer from './common/reducer';
 import { ICommonState } from './common/types';
 import UserReducer from './user/reducer';
 import { IUserState } from './user/types';
 
-export interface IRootReducer {
+export interface IRootStates {
   common: ICommonState;
   users: IUserState;
 }
 
-export const rootReducer = combineReducers<IRootReducer>({
+export const rootReducer: Reducer<IRootStates> = combineReducers<IRootStates>({
+  router: UserReducer,
   common: CommonReducer,
   users: UserReducer,
 });

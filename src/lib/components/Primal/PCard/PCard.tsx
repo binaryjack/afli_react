@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import Card from './Card/Card';
-import CardBody from './CardBody/CardBody';
-import CardText from './CardText/CardText';
-import CardTitle from './CardTitle/CardTitle';
+import Card from './card/card';
+import CardBody from './cardBody/cardBody';
+import CardText from './cardText/cardText';
+import CardTitle from './cardTitle/cardTitle';
 
 type PCardProps = {
   title: string;

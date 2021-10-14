@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import PTextBox from '../../lib/components/Primal/PTextBox/PTextBox';
-import './Home.css';
+import PTextBox from '../../lib/components/primal/PTextBox/PTextBox';
+import './home.css';
 
 const Home: FC = () => {
   return (

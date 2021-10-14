@@ -1,4 +1,4 @@
-import { IContextProps, ThemeContext } from 'lib/Context/Theme/ThemeContext';
+import { IContextProps, ThemeContext } from 'lib/context/theme/ThemeContext';
 import { FC, useContext } from 'react';
 import '../../../Style/a-style.css';
 import './PTextBox.css';

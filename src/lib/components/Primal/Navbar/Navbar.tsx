@@ -1,7 +1,7 @@
-import Version from 'lib/Compositions/Version/Version';
+import Version from 'lib/compositions/Version/Version';
 import { FC, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import './Navbar.css';
+import './navbar.css';
 
 const Navbar: FC = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
