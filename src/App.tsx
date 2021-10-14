@@ -1,8 +1,8 @@
 import BtnToggle from 'lib/components/BtnToggle/BtnToggle';
-import Navbar from 'lib/components/Primal/Navbar/Navbar';
-import Contact from 'Pages/Contact/Contact';
-import Home from 'Pages/Home/Home';
-import Projects from 'Pages/Projects/Projects';
+import Navbar from 'lib/components/primal/Navbar/Navbar';
+import Contact from 'pages/Contact/Contact';
+import Home from 'pages/Home/Home';
+import Projects from 'pages/Projects/Projects';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = () => {

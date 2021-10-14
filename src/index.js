@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import ThemeContextProvider from './lib/Context/Theme/ThemeContext';
+import ThemeContextProvider from './lib/context/theme/ThemeContext';
 import { CommonStore } from './Store/index';
 
 import App from './App';

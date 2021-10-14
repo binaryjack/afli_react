@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import chevron from './chevron.png';
-import './CsLi.css';
+import './csLi.css';
 
 type CsLiProps = {
   item: number;

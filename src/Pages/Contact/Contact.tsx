@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import './Contact.css';
+import './contact.css';
 
 const Contact: FC = () => {
   return <h1 className="pge-contact">Contact</h1>;

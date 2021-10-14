@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import { CsUl } from '../CsUl/CsUl';
+import { CsUl } from '../CsUl/csUl';
 
 interface MyArrProps {
   arr: number[];
