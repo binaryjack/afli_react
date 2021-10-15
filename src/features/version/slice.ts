@@ -2,16 +2,16 @@
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export interface CounterState {
+export interface VersionState {
   value: number;
 }
 
-const initialState: CounterState = {
+const initialState: VersionState = {
   value: 0,
 };
 // uses immer that's avoid to mutate.  do not need to copy state and write a new one.
-const counterSlice = createSlice({
-  name: 'counter',
+const versionSlice = createSlice({
+  name: 'version',
   initialState,
   reducers: {
     // increment
@@ -19,12 +19,13 @@ const counterSlice = createSlice({
       // immer makes it immutability works under the hood
       state.value++;
     },
-    amountAdding: (state, action: PayloadAction<number>) => {
-      state.value += action.payload;
+    decremented: (state) => {
+      // immer makes it immutability works under the hood
+      state.value--;
     },
   },
 });
 
-export const { incremented, amountAdding } = counterSlice.actions;
+export const { incremented, decremented } = versionSlice.actions;
 
-export default counterSlice.reducer;
+export default versionSlice.reducer;
