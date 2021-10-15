@@ -1,5 +1,4 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-
 import { RootState, AppDispatch } from './store';
 
 // here we predefine custom dispatcher hook base on AppDispatchActions collection from store file with correct redux toolkit types
