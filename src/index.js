@@ -6,10 +6,11 @@ import App from './App';
 import './index.css';
 import ThemeContextProvider from './lib/context/theme/ThemeContext';
 import { CommonStore } from './store/index';
+import { store } from './app/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={CommonStore}>
+    <Provider store={store}>
       <ThemeContextProvider>
         <App />
       </ThemeContextProvider>
