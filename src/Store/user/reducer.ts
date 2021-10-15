@@ -1,6 +1,5 @@
-import { User } from 'core/entities/User';
-
 import { IUserState, UserActions, UserActionTypes } from './types';
+
 
 const USER_INITIAL_STATE: IUserState = {
   user: undefined,
