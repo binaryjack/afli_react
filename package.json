@@ -52,6 +52,7 @@
     "watch:css": "npm run build:css && node-sass src/ -o src/ -w -r",
     "start:js": "react-scripts --max-http-header-size=16384 start",
     "start": "npm-run-all -p watch:css start:js",
+    "start:svr": "npm-run-all node server/server -p watch:css start:js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
