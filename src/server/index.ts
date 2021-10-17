@@ -7,6 +7,14 @@ const listItems = [
   35, 645, 745, 74, 36, 363,
 ];
 
+// app.use(express.json);
+
+const baseUrl = 'api';
+
+app.use(() => {
+  baseUrl: baseUrl
+});
+
 app.get('/', (req, res) => {
   return res.send(listItems);
 });

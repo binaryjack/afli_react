@@ -1,0 +1,5 @@
+E:\dev\Repo\afli_react\server\aflir2.db\bin\Debug\aflir2.db.dacpac
+E:\dev\Repo\afli_react\server\aflir2.db\bin\Debug\aflir2.db.dll
+E:\dev\Repo\afli_react\server\aflir2.db\bin\Debug\aflir2.db.pdb
+E:\dev\Repo\afli_react\server\aflir2.db\obj\Debug\aflir2.db.dll
+E:\dev\Repo\afli_react\server\aflir2.db\obj\Debug\aflir2.db.pdb

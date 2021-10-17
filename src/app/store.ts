@@ -3,8 +3,6 @@ import counterReducer from '../features/counter/slice';
 import { apiSlice } from '../features/data/data-api-slice';
 import versionReducer from '../features/version/slice';
 
-
-
 export const store = configureStore({
   reducer: {
     counter: counterReducer,

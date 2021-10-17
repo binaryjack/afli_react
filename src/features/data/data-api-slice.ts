@@ -14,7 +14,7 @@ export const apiSlice = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({
         // Base API controller
-        baseUrl: 'http://localhost:3001/',
+        baseUrl: 'http://localhost:3001/api',
         prepareHeaders(headers) {
             headers.set('x-api-key', X_API_KEY);
 

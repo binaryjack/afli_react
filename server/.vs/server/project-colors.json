@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a89cd293-a2b8-4994-8794-def3d2854301": {
+      "ProjectGuid": "a89cd293-a2b8-4994-8794-def3d2854301",
+      "DisplayName": "aflir2.api",
+      "ColorIndex": 0
+    },
+    "06378725-8ff2-4fd1-aab6-33890fcb6f2f": {
+      "ProjectGuid": "06378725-8ff2-4fd1-aab6-33890fcb6f2f",
+      "DisplayName": "server.aflir2.db",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

@@ -33,7 +33,7 @@ const Navbar: FC = () => {
           <NavLink to="/Projects" exact activeClassName="current">
             <li className="nav-list-item">Projects</li>
           </NavLink>
-          <NavLink to="/Contacts" exact activeClassName="current">
+          <NavLink to="/Contact" exact activeClassName="current">
             <li className="nav-list-item">Contacts</li>
           </NavLink>
         </ul>
