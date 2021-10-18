@@ -1,16 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit';
+import applicationSettingsReducer from '../features/appsettings/slice';
 import counterReducer from '../features/counter/slice';
-import { apiSlice } from '../features/data/data-api-slice';
+import { personSlice } from '../features/person/person-api-slice';
 import versionReducer from '../features/version/slice';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     version: versionReducer,
-    [apiSlice.reducerPath]: apiSlice.reducer
+    appplicationSettings: applicationSettingsReducer,
+    [personSlice.reducerPath]: personSlice.reducer
   },
   middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware().concat(apiSlice.middleware);
+    return getDefaultMiddleware().concat(personSlice.middleware);
   }
 });
 

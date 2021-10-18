@@ -42,6 +42,18 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
+      "LinqKit.Microsoft.EntityFrameworkCore/5.0.26": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/LinqKit.Microsoft.EntityFrameworkCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/LinqKit.Microsoft.EntityFrameworkCore.dll": {}
+        }
+      },
       "MediatR/9.0.0": {
         "type": "package",
         "compile": {
@@ -1811,6 +1823,19 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "LinqKit.Microsoft.EntityFrameworkCore/5.0.26": {
+      "sha512": "HCVpETqDnbEkOjH8XWvpR8Rd6NJb/bqaj6yY8yLnZyvdL6lEtG6QbLrfiVycUkJjjniyf3X8fmBS9KVAB5wHcw==",
+      "type": "package",
+      "path": "linqkit.microsoft.entityframeworkcore/5.0.26",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.1/LinqKit.Microsoft.EntityFrameworkCore.dll",
+        "lib/netstandard2.1/LinqKit.Microsoft.EntityFrameworkCore.xml",
+        "linqkit.microsoft.entityframeworkcore.5.0.26.nupkg.sha512",
+        "linqkit.microsoft.entityframeworkcore.nuspec"
       ]
     },
     "MediatR/9.0.0": {
@@ -6422,6 +6447,7 @@
     "net5.0": [
       "Dapper >= 2.0.90",
       "EntityFramework >= 6.4.4",
+      "LinqKit.Microsoft.EntityFrameworkCore >= 5.0.26",
       "MediatR >= 9.0.0",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 9.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.11",
@@ -6482,6 +6508,10 @@
           "EntityFramework": {
             "target": "Package",
             "version": "[6.4.4, )"
+          },
+          "LinqKit.Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[5.0.26, )"
           },
           "MediatR": {
             "target": "Package",

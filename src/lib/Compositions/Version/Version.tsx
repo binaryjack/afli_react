@@ -1,11 +1,10 @@
+import {
+  amountAdding
+} from 'features/counter/slice';
+import { decremented, incremented } from 'features/version/slice';
 import PTextBox from 'lib/components/primal/PTextBox/PTextBox';
 import { FC } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
-import { decremented, incremented } from 'features/version/slice';
-import {
-  amountAdding,
-  incremented as counterIncremented,
-} from 'features/counter/slice';
 
 const Version: FC = () => {
   const versionNumber = useAppSelector((state) => state.version.value);

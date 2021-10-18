@@ -1,6 +1,4 @@
-﻿using aflir2.api.Enums;
-using Microsoft.AspNetCore.Http;
-using System;
+﻿using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
 
 namespace aflir2.api.Exceptions.Middleware

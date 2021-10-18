@@ -36,6 +36,9 @@ const Navbar: FC = () => {
           <NavLink to="/Contact" exact activeClassName="current">
             <li className="nav-list-item">Contacts</li>
           </NavLink>
+          <NavLink to="/Persons" exact activeClassName="current">
+            <li className="nav-list-item">Persons</li>
+          </NavLink>
         </ul>
       )}
       <div className="nav-version">

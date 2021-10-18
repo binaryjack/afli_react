@@ -29,3 +29,7 @@ server/node_modules/
 /src/server/node_modules/*
 /src/server/build
 /src/server/node_modules
+
+
+*/bin
+*/obj

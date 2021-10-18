@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "3oqjiNCixd/23pyeabUaJOpqFmntfURTbT6gte+Xy33SblA6AISycrhKOgUW2zOsptg1vHx8U5I4DGd5bAxWPg==",
+  "dgSpecHash": "JQmMXKLWMmqMqe/O2eMR/bJ+n81+0vgE2YBpAjIYRlsTYFBZfps66R7TmVdln9gdfTIGjv/ir8pKAgNYKIETdw==",
   "success": true,
   "projectFilePath": "E:\\dev\\Repo\\afli_react\\server\\aflir2.api\\aflir2.api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\piana\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\piana\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\piana\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\piana\\.nuget\\packages\\linqkit.microsoft.entityframeworkcore\\5.0.26\\linqkit.microsoft.entityframeworkcore.5.0.26.nupkg.sha512",
     "C:\\Users\\piana\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\piana\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\piana\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
