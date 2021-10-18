@@ -1,0 +1,34 @@
+.p-validation-root {
+  border-color: rgb(190, 24, 24);
+  color: rgb(211, 221, 166);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .p-validation-error-number {
+    background: rgb(51, 5, 5);
+    padding: 2px;
+  }
+  .p-validation-error-text {
+    background: rgb(51, 5, 5);
+    padding: 2px;
+  }
+  .p-validation-error-rule {
+    background: rgb(51, 5, 5);
+    padding: 2px;
+  }
+}
+
+.darky-validation-3 {
+  border-color: rgb(102, 62, 62);
+  color: rgb(51, 51, 37);
+  .p-validation-error-number {
+    background: rgb(128, 84, 84);
+  }
+  .p-validation-error-text {
+    background: rgb(128, 84, 84);
+  }
+  .p-validation-error-rule {
+    background: rgb(128, 84, 84);
+  }
+}

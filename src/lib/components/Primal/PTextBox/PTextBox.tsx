@@ -7,10 +7,10 @@ type Props = {
   text: string;
 };
 
-const PTextBox: FC<Props> = ({ text }) => {
+const PTextBox: FC<Props> = ({ children, text }) => {
   const { theme } = useContext<IContextProps>(ThemeContext);
   return (
-    <span className={`p-textbox-root ${theme ? 'darky-3' : ''}`}>{text}</span>
+    <span className={`p-textbox-root ${theme ? 'darky-3' : ''}`}>{text && children}</span>
   );
 };
 
