@@ -1,4 +1,26 @@
 .p-validation-root {
-  border-radius: 4px;
-  border: 1px solid #191919;
-}
+  border-color: #be1818;
+  color: #d3dda6;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .p-validation-root .p-validation-error-number {
+    background: #330505;
+    padding: 2px; }
+  .p-validation-root .p-validation-error-text {
+    background: #330505;
+    padding: 2px; }
+  .p-validation-root .p-validation-error-rule {
+    background: #330505;
+    padding: 2px; }
+
+.darky-validation-3 {
+  border-color: #663e3e;
+  color: #333325; }
+  .darky-validation-3 .p-validation-error-number {
+    background: #805454; }
+  .darky-validation-3 .p-validation-error-text {
+    background: #805454; }
+  .darky-validation-3 .p-validation-error-rule {
+    background: #805454; }

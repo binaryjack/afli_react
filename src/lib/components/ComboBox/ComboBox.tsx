@@ -35,17 +35,22 @@ const ComboBox: FC<Props> = ({ data }) => {
 
     const onSelectedItem = (id: string | number) => {
         console.log("onSelectedItem", id);
-
         setSelectedItem(id);
     }
 
     return (
         <>
-            <select className={`combo-box-select base-components base-components-border ${theme ? 'darky-3' : ''}`} value={selectedItem} onChange={o => onSelectedItem(o.target.value)} >
-                {data?.length > 0 && data.map((item, index) => {
-                    return <option value={item.id} key={`${index}${item.id}`} defaultValue={selectedItem} selected={selectedItem === item.id} >{item.label}</option>
-                })}
+            <select
+                defaultValue={selectedItem}
+                className={`combo-box-select base-components base-components-border ${theme ? 'darky-3' : ''}`}
+
+                onChange={o => onSelectedItem(o.target.value)} >
+
+                {data?.length > 0 && data.map((item: IComboBoxProperty, index) =>
+                    <option label={item.label} value={item.id} key={`${index}${item.id}`} />
+                )}
             </select>
+
             {debugMode &&
                 <div className="debug-view">
                     {selectedItem}

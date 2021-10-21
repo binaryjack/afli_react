@@ -17,7 +17,6 @@ const PValidationBox: FC<Props> = ({
       <span className={"p-validation-error-number"} >{data.errorNumber && data.errorNumber}</span>
       <span className={"p-validation-error-text"} >{data.message && data.message}</span>
       <span className={"p-validation-error-rule"}  >{data.rule && data.rule}</span>
-
     </span>
 
   );
