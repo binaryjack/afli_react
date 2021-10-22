@@ -11,7 +11,7 @@ const Persons: FC = () => {
     const { data, error, isFetching } = useGetAllQuery();
 
     const [personData, setPesonData] = useState<IComboBoxProperty[]>([]);
-    const [lastName, setLastName] = useState<string>();
+    const [lastName, setLastName] = useState<string>('');
 
     const onNameUpdate = (name: string) => setLastName(name);
 
@@ -21,8 +21,8 @@ const Persons: FC = () => {
         rule: "Mandatory"
     }
 
-    const isMandatory = (value: string | number): boolean =>
-        !!value && `${value}`.length > 0;
+    const isMandatory = (value: string): boolean =>
+        !value || value.length === 0;
 
 
     useEffect(() => {

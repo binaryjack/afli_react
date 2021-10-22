@@ -31,5 +31,14 @@ code {
   width: 200px; }
 
 .base-components-border {
-  border: 1px solid #191919;
-  border-radius: 5px; }
+  border-bottom: 1px solid black;
+  border-top: none;
+  border-left: none;
+  border-right: none; }
+
+.base-components-border:focus {
+  border-bottom: 1px solid black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: lightgray; }
