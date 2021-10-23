@@ -45,12 +45,13 @@ const Persons: FC = () => {
                 <h1 className="person-header">Persons ({personData?.length})</h1>
                 <ComboBox data={personData} />
                 <PInputBox value={lastName}
+                    label={"Last name"}
+                    type={'text'}
                     setValue={onNameUpdate}
                     validate={isMandatory}
                     validationData={validationData} />
 
 
-                <span>{lastName}</span>
             </>
         )}
     </>);

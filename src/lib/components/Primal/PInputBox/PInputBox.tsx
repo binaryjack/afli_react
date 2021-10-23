@@ -10,9 +10,18 @@ type Props = {
   setValue: (value: string) => void;
   validationData?: PValidation;
   validate?: (value: string) => boolean;
+  type: 'text' | 'tel' | 'email' | 'search';
+  label: string;
 };
 
-const PInputBox: FC<Props> = ({ setValue, value, validate, validationData }) => {
+const PInputBox: FC<Props> = (
+  {
+    setValue,
+    value,
+    validate,
+    validationData,
+    type,
+    label }) => {
   const { theme } = useContext<IContextProps>(ThemeContext);
   const [hasValidationErrors, setHasValidationErrors] = useState<boolean>(false)
 
@@ -32,28 +41,32 @@ const PInputBox: FC<Props> = ({ setValue, value, validate, validationData }) => 
     setFocus(false);
   }
 
-
   const onValidate = () => {
 
     if (!validate) return;
     setHasValidationErrors(validate(value));
   }
 
-
   useEffect(() => {
     onValidate();
   }, [value])
 
-
-
   return (
-    <div>
-      {pristine ? 'pristine' : ''}
-      <br />
-      {focus ? 'focus' : ''}
-      <input ref={inputRef} onFocus={onFocus} onBlur={onBlur} value={value} onInput={(e) => setValue(e.currentTarget.value)}
-        className={`p-input-root base-components-border ${theme ? 'darky-3' : ''}`} />
-      {pristine && validationData && hasValidationErrors && <PValidationBox data={validationData} />}
+    <div className={`p-input-root`}>
+      <label htmlFor={label} className={`p-label ${(focus || value) ? 'p-label-focus' : ''}`}>{label}</label>
+      <input
+        id={label}
+        ref={inputRef}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        value={value}
+        type={type}
+        onInput={(e) => setValue(e.currentTarget.value)}
+        className={` base-components base-components-border ${theme ? 'darky-3' : ''}`} />
+      {pristine &&
+        validationData &&
+        hasValidationErrors &&
+        <PValidationBox data={validationData} />}
     </div>
   );
 };

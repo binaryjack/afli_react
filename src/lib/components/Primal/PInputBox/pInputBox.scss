@@ -1,2 +1,36 @@
 .p-input-root {
+  top: 0;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  line-height: normal;
+  top: 200px;
+  .p-label {
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    margin: 0 0 0 5px;
+    font-size: large;
+    transition: font-size 0.6s 'top' 0.6s ease-in-out;
+  }
+
+  .p-label-focus {
+    top: -2px;
+    margin: 0 0 0 5px;
+    font-size: xx-small;
+    transition: font-size 0.6s 'top' 0.6s ease-in-out;
+  }
+
+  input {
+    width: 99vw;
+  }
+
+  .p-validation-root {
+    padding: 1px 0 0 5px;
+    width: 99vw;
+    display: flex;
+  }
 }

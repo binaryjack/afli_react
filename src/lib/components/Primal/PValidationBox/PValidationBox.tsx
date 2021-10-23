@@ -13,11 +13,13 @@ const PValidationBox: FC<Props> = ({
 }) => {
   const { theme } = useContext<IContextProps>(ThemeContext);
   return (
-    <span className={`p-validation-root ${theme ? 'darky-validation-3' : ''}`}>
-      <span className={"p-validation-error-number"} >{data.errorNumber && data.errorNumber}</span>
-      <span className={"p-validation-error-text"} >{data.message && data.message}</span>
+    <div className={`p-validation-root ${theme ? 'darky-validation-3' : ''}`}>
+      <div className={"p-validation-group-1"}>
+        <span className={"p-validation-error-number"} >{data.errorNumber && data.errorNumber}</span>
+        <span className={"p-validation-error-text"} >{data.message && data.message}</span>
+      </div>
       <span className={"p-validation-error-rule"}  >{data.rule && data.rule}</span>
-    </span>
+    </div>
 
   );
 };

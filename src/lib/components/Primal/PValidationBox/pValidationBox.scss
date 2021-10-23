@@ -1,19 +1,26 @@
 .p-validation-root {
-  color: rgb(211, 221, 166);
-  padding: 4px;
+  top: 0;
+  padding: 3px 0 0 0;
+  margin: 3px 0px 3px 3px;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  .p-validation-error-number {
-    background: rgb(51, 5, 5);
-    padding: 2px;
+  font-size: xx-small;
+  background: rgb(107, 0, 0);
+  color: rgb(193, 214, 153);
+
+  .p-validation-group-1 {
+    flex-direction: row;
+    .p-validation-error-number {
+      padding: 2px;
+    }
+    .p-validation-error-text {
+      padding: 2px;
+    }
   }
-  .p-validation-error-text {
-    background: rgb(51, 5, 5);
-    padding: 2px;
-  }
+
   .p-validation-error-rule {
-    background: rgb(51, 5, 5);
     padding: 2px;
   }
 }
@@ -21,13 +28,5 @@
 .darky-validation-3 {
   border-color: rgb(102, 62, 62);
   color: rgb(51, 51, 37);
-  .p-validation-error-number {
-    background: rgb(128, 84, 84);
-  }
-  .p-validation-error-text {
-    background: rgb(128, 84, 84);
-  }
-  .p-validation-error-rule {
-    background: rgb(128, 84, 84);
-  }
+  background: rgb(128, 84, 84);
 }

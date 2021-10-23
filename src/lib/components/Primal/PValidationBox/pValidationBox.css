@@ -1,25 +1,28 @@
 .p-validation-root {
-  color: #d3dda6;
-  padding: 4px;
+  top: 0;
+  padding: 3px 0 0 0;
+  margin: 3px 0px 3px 3px;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  justify-content: center; }
-  .p-validation-root .p-validation-error-number {
-    background: #330505;
-    padding: 2px; }
-  .p-validation-root .p-validation-error-text {
-    background: #330505;
-    padding: 2px; }
-  .p-validation-root .p-validation-error-rule {
-    background: #330505;
-    padding: 2px; }
+  justify-content: center;
+  font-size: xx-small;
+  background: #6b0000;
+  color: #c1d699; }
+
+.p-validation-root .p-validation-group-1 {
+  flex-direction: row; }
+
+.p-validation-root .p-validation-group-1 .p-validation-error-number {
+  padding: 2px; }
+
+.p-validation-root .p-validation-group-1 .p-validation-error-text {
+  padding: 2px; }
+
+.p-validation-root .p-validation-error-rule {
+  padding: 2px; }
 
 .darky-validation-3 {
   border-color: #663e3e;
-  color: #333325; }
-  .darky-validation-3 .p-validation-error-number {
-    background: #805454; }
-  .darky-validation-3 .p-validation-error-text {
-    background: #805454; }
-  .darky-validation-3 .p-validation-error-rule {
-    background: #805454; }
+  color: #333325;
+  background: #805454; }
