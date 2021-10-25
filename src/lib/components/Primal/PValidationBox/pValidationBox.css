@@ -9,18 +9,14 @@
   font-size: xx-small;
   background: #6b0000;
   color: #c1d699; }
-
-.p-validation-root .p-validation-group-1 {
-  flex-direction: row; }
-
-.p-validation-root .p-validation-group-1 .p-validation-error-number {
-  padding: 2px; }
-
-.p-validation-root .p-validation-group-1 .p-validation-error-text {
-  padding: 2px; }
-
-.p-validation-root .p-validation-error-rule {
-  padding: 2px; }
+  .p-validation-root .p-validation-group-1 {
+    flex-direction: row; }
+    .p-validation-root .p-validation-group-1 .p-validation-error-number {
+      padding: 2px; }
+    .p-validation-root .p-validation-group-1 .p-validation-error-text {
+      padding: 2px; }
+  .p-validation-root .p-validation-error-rule {
+    padding: 2px; }
 
 .darky-validation-3 {
   border-color: #663e3e;

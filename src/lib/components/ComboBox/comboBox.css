@@ -1,2 +1,13 @@
 .combo-box-select {
+  position: relative;
+  width: 100%; }
+
+.combo-box-select .cb-label {
+  position: absolute;
+  font-size: xx-small;
+  top: -2px;
+  right: 9px; }
+
+.combo-box-select select {
+  width: 100%;
   position: relative; }

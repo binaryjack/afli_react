@@ -2,10 +2,10 @@ import { IContextProps, ThemeContext } from 'lib/context/theme/ThemeContext';
 import { FC, useContext } from 'react';
 import '../../../style/a-style.css';
 import './pValidationBox.css';
-import PValidation from './PValidationType';
+import PValidationMessage from './PValidationType';
 
 type Props = {
-  data: PValidation;
+  data: PValidationMessage;
 };
 
 const PValidationBox: FC<Props> = ({

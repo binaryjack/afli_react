@@ -8,7 +8,6 @@ export interface IComboBoxProperty {
     label: string;
 }
 
-
 export function toComboBoxProperties<T>(data: T[], predicate: (item: T) => IComboBoxProperty): IComboBoxProperty[] {
     if (!data || data?.length === 0) return [];
     const builder: IComboBoxProperty[] = [];
@@ -18,13 +17,12 @@ export function toComboBoxProperties<T>(data: T[], predicate: (item: T) => IComb
     return builder;
 }
 
-
 type Props = {
     data: IComboBoxProperty[];
-
+    label: string;
 }
 
-const ComboBox: FC<Props> = ({ data }) => {
+const ComboBox: FC<Props> = ({ data, label }) => {
 
     const { theme } = useContext<IContextProps>(ThemeContext);
     const [selectedItem, setSelectedItem] = useState<string | number | undefined>();
@@ -40,23 +38,26 @@ const ComboBox: FC<Props> = ({ data }) => {
 
     return (
         <>
-            <select
-                defaultValue={selectedItem}
-                className={`combo-box-select base-components base-components-border ${theme ? 'darky-3' : ''}`}
+            <div className={"combo-box-select"}>
+                <label htmlFor={label} className={`cb-label`}>{label}</label>
+                <select
+                    id={label}
+                    defaultValue={selectedItem}
+                    className={`base-components base-components-border ${theme ? 'darky-3  base-components-border-daky' : ''}`}
 
-                onChange={o => onSelectedItem(o.target.value)} >
+                    onChange={o => onSelectedItem(o.target.value)} >
 
-                {data?.length > 0 && data.map((item: IComboBoxProperty, index) =>
-                    <option label={item.label} value={item.id} key={`${index}${item.id}`} />
-                )}
-            </select>
+                    {data?.length > 0 && data.map((item: IComboBoxProperty, index) =>
+                        <option label={item.label} value={item.id} key={`${index}${item.id}`} />
+                    )}
+                </select>
 
-            {debugMode &&
-                <div className="debug-view">
-                    {selectedItem}
-                </div>
-            }
-
+                {debugMode &&
+                    <div className="debug-view">
+                        {selectedItem}
+                    </div>
+                }
+            </div>
         </>
     )
 }
