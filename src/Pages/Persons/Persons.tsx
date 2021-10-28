@@ -1,10 +1,14 @@
 import Person from 'core/entities/Person';
 import PInputBox from 'lib/components/primal/PInputBox/PInputBox';
-import PValidationMessage from 'lib/components/primal/PValidationBox/PValidationType';
+import { useValidationRule, ValidationsPreset } from 'lib/validations/formInputValidations';
 import { FC, useEffect, useState } from 'react';
 import { useGetAllQuery } from '../../features/person/person-api-slice';
 import ComboBox, { IComboBoxProperty, toComboBoxProperties } from '../../lib/components/ComboBox/ComboBox';
 import "./persons.css";
+
+
+
+
 
 const Persons: FC = () => {
 
@@ -14,7 +18,7 @@ const Persons: FC = () => {
     const [lastName, setLastName] = useState<string>('');
 
     const onNameUpdate = (name: string) => setLastName(name);
-
+    const validationsRules = useValidationRule(ValidationsPreset.MandatoryNames);
 
     useEffect(() => {
         if (isFetching) return;
@@ -38,8 +42,7 @@ const Persons: FC = () => {
                     label={"Last name"}
                     type={'text'}
                     setValue={onNameUpdate}
-                    validate={isMandatory}
-                    validationData={validationData} />
+                    validationsRule={validationsRules ?? undefined} />
             </>
         )}
     </>);

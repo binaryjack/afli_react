@@ -1,4 +1,4 @@
-.p-input-root {
+.p-email-root {
   top: 0;
   position: relative;
   width: 100%;
@@ -7,31 +7,22 @@
   justify-content: center;
   height: auto;
   line-height: normal;
-  top: 200px;
-}
-
-.p-input-root .p-label {
-  position: absolute;
-  top: 6px;
-  left: 5px;
-  margin: 0 0 0 5px;
-  font-size: large;
-  transition: font-size 0.3s ease-in-out, top 0.3s ease-in-out;
-}
-
-.p-input-root .p-label-focus {
-  top: -2px;
-  margin: 0 0 0 5px;
-  font-size: xx-small;
-  transition: font-size 0.3s ease-in-out, top 0.3s ease-in-out;
-}
-
-.p-input-root input {
-  width: 99vw;
-}
-
-.p-input-root .p-validation-root {
-  padding: 1px 0 0 5px;
-  width: 99vw;
-  display: flex;
-}
+  top: 200px; }
+  .p-email-root .p-label {
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    margin: 0 0 0 5px;
+    font-size: large;
+    transition: font-size 0.3s ease-in-out, top 0.3s ease-in-out; }
+  .p-email-root .p-label-focus {
+    top: -2px;
+    margin: 0 0 0 5px;
+    font-size: xx-small;
+    transition: font-size 0.3s ease-in-out, top 0.3s ease-in-out; }
+  .p-email-root input {
+    width: 99vw; }
+  .p-email-root .p-validation-root {
+    padding: 1px 0 0 5px;
+    width: 99vw;
+    display: flex; }

@@ -1,15 +1,15 @@
 import { IContextProps, ThemeContext } from 'lib/context/theme/ThemeContext';
-import { FC, useContext, useEffect, useRef, useState } from 'react';
+import { useValidations, ValidationsRule } from 'lib/validations/formInputValidations';
+import { FC, useContext, useRef, useState } from 'react';
 import '../../../style/a-style.css';
 import PValidationBox from '../PValidationBox/PValidationBox';
-import PValidationMessage from '../PValidationBox/PValidationType';
 import './pInputBox.css';
 
 type Props = {
   value: string;
   setValue: (value: string) => void;
-  validationData?: PValidationMessage;
-  validate?: (value: string) => boolean;
+  validationsRule?: ValidationsRule;
+
   type: 'text';
   label: string;
 };
@@ -18,17 +18,14 @@ const PInputBox: FC<Props> = (
   {
     setValue,
     value,
-    validate,
-    validationData,
+    validationsRule,
     type,
     label }) => {
   const { theme } = useContext<IContextProps>(ThemeContext);
-  const [hasValidationErrors, setHasValidationErrors] = useState<boolean>(false)
-
   const [pristine, setPristine] = useState(false);
   const [focus, setFocus] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-
+  const validationResults = useValidations(value, validationsRule);
 
   const onFocus = () => {
     setPristine(true);
@@ -39,15 +36,6 @@ const PInputBox: FC<Props> = (
     setPristine(true);
     setFocus(false);
   }
-
-  const onValidate = () => {
-    if (!validate) return;
-    setHasValidationErrors(validate(value));
-  }
-
-  useEffect(() => {
-    onValidate();
-  }, [value])
 
   return (
     <div className={`p-input-root`}>
@@ -62,9 +50,8 @@ const PInputBox: FC<Props> = (
         onInput={(e) => setValue(e.currentTarget.value)}
         className={` base-components base-components-border ${theme ? 'darky-3 base-components-border-daky' : ''}`} />
       {pristine &&
-        validationData &&
-        hasValidationErrors &&
-        <PValidationBox data={validationData} />}
+        validationResults &&
+        <PValidationBox validationResults={validationResults} />}
     </div>
   );
 };
