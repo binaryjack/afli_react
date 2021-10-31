@@ -1,11 +1,13 @@
 import Person from 'core/entities/Person';
 import PInputBox from 'lib/components/primal/PInputBox/PInputBox';
-import { useValidationRule, ValidationsPreset } from 'lib/validations/formInputValidations';
+import { useValidationRule, ValidationsPreset, ValidationsRuleSpecific } from 'lib/validations/formInputValidations';
 import { FC, useEffect, useState } from 'react';
 import { useGetAllQuery } from '../../features/person/person-api-slice';
 import ComboBox, { IComboBoxProperty, toComboBoxProperties } from '../../lib/components/ComboBox/ComboBox';
 import "./persons.css";
 
+
+const lastNameValidation: ValidationsRuleSpecific = { fieldName: 'Last Name', min: 6, max: 20 };
 
 
 
@@ -18,7 +20,7 @@ const Persons: FC = () => {
     const [lastName, setLastName] = useState<string>('');
 
     const onNameUpdate = (name: string) => setLastName(name);
-    const validationsRules = useValidationRule(ValidationsPreset.MandatoryNames);
+    const validationsRules = useValidationRule(ValidationsPreset.MandatoryNames, lastNameValidation);
 
     useEffect(() => {
         if (isFetching) return;
@@ -27,7 +29,6 @@ const Persons: FC = () => {
         var items = toComboBoxProperties<Person>(data.person, (item) => {
             return { id: item.id, label: `${item.firstName} ${item.lastName}` };
         });
-
 
         setPesonData(items);
 

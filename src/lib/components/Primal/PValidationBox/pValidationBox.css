@@ -7,16 +7,32 @@
   flex-direction: column;
   justify-content: center;
   font-size: xx-small;
-  background: #6b0000;
-  color: #c1d699; }
-  .p-validation-root .p-validation-group-1 {
-    flex-direction: row; }
-    .p-validation-root .p-validation-group-1 .p-validation-error-number {
-      padding: 2px; }
-    .p-validation-root .p-validation-group-1 .p-validation-error-text {
-      padding: 2px; }
-  .p-validation-root .p-validation-error-rule {
-    padding: 2px; }
+  background: rgba(255, 0, 0, 0.664);
+  color: #313131; }
+
+.p-validation-root .p-validation-check {
+  display: flex; }
+
+.p-validation-root .p-validation-check .p-validation-img {
+  display: flex; }
+
+.p-validation-root .p-validation-check .p-validation-img img {
+  display: flex;
+  width: 10px;
+  padding: 0;
+  margin: 4px; }
+
+.p-validation-root .p-validation-check .p-validation-text {
+  flex-direction: row; }
+
+.p-validation-root .p-validation-check .p-validation-text .p-validation-error-number {
+  padding: 2px; }
+
+.p-validation-root .p-validation-check .p-validation-text .p-validation-error-text {
+  padding: 2px; }
+
+.p-validation-root .p-validation-check .p-validation-error-rule {
+  padding: 2px; }
 
 .darky-validation-3 {
   border-color: #663e3e;

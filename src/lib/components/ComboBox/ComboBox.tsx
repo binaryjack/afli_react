@@ -28,11 +28,8 @@ const ComboBox: FC<Props> = ({ data, label }) => {
     const [selectedItem, setSelectedItem] = useState<string | number | undefined>();
     const debugMode = useAppSelector((state) => state.appplicationSettings.debug);
 
-
-    console.log("ComboBox", data);
-
     const onSelectedItem = (id: string | number) => {
-        console.log("onSelectedItem", id);
+
         setSelectedItem(id);
     }
 

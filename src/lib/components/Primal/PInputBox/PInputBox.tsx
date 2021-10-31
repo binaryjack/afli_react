@@ -27,6 +27,8 @@ const PInputBox: FC<Props> = (
   const inputRef = useRef<HTMLInputElement>(null);
   const validationResults = useValidations(value, validationsRule);
 
+
+
   const onFocus = () => {
     setPristine(true);
     setFocus(true);
@@ -41,6 +43,8 @@ const PInputBox: FC<Props> = (
     <div className={`p-input-root`}>
       <label htmlFor={label} className={`p-label ${(focus || value) ? 'p-label-focus' : ''}`}>{label}</label>
       <input
+        autoComplete={'off'}
+        spellCheck={false}
         id={label}
         ref={inputRef}
         onFocus={onFocus}

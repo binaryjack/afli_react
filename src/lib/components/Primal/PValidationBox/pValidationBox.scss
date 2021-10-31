@@ -7,21 +7,34 @@
   flex-direction: column;
   justify-content: center;
   font-size: xx-small;
-  background: rgb(107, 0, 0);
-  color: rgb(193, 214, 153);
+  background: rgba(255, 0, 0, 0.664);
+  color: rgb(49, 49, 49);
 
-  .p-validation-group-1 {
-    flex-direction: row;
-    .p-validation-error-number {
+  .p-validation-check {
+    display: flex;
+    .p-validation-img {
+      display: flex;
+      img {
+        display: flex;
+        width: 10px;
+        padding: 0;
+        margin: 4px;
+      }
+    }
+
+    .p-validation-text {
+      flex-direction: row;
+      .p-validation-error-number {
+        padding: 2px;
+      }
+      .p-validation-error-text {
+        padding: 2px;
+      }
+    }
+
+    .p-validation-error-rule {
       padding: 2px;
     }
-    .p-validation-error-text {
-      padding: 2px;
-    }
-  }
-
-  .p-validation-error-rule {
-    padding: 2px;
   }
 }
 
