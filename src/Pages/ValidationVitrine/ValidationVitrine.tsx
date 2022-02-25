@@ -6,11 +6,11 @@ import "./validationVitrine.css";
 const ValidationVitrine: FC = () => {
 
     const mandatorySpecific: ValidationsRuleSpecific = {}
-    const mandatoryRule = prepareRules(ValidationsPreset.MandatoryNames, mandatorySpecific);
+    const mandatoryRule = prepareRules([ValidationsPreset.Mandatory], mandatorySpecific);
 
 
     const eMailSpecific: ValidationsRuleSpecific = {}
-    const eMailSRule = prepareRules(ValidationsPreset.Emails, eMailSpecific);
+    const eMailSRule = prepareRules([ValidationsPreset.Emails], eMailSpecific);
 
     return (
         <>

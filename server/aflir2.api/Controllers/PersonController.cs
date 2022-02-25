@@ -1,7 +1,6 @@
 ﻿using aflir2.api.Domains.Person;
 using aflir2.api.Exceptions;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Text.Json;

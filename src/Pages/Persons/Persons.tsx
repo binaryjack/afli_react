@@ -1,14 +1,20 @@
 import Person from 'core/entities/Person';
+import { useGetAllQuery } from 'features/person/person-api-slice';
 import PInputBox from 'lib/components/primal/PInputBox/PInputBox';
 import { useValidationRule, ValidationsPreset, ValidationsRuleSpecific } from 'lib/validations/formInputValidations';
 import { FC, useEffect, useState } from 'react';
-import { useGetAllQuery } from '../../features/person/person-api-slice';
+import { useForm } from 'react-hook-form';
 import ComboBox, { IComboBoxProperty, toComboBoxProperties } from '../../lib/components/ComboBox/ComboBox';
 import "./persons.css";
 
 
-const lastNameValidation: ValidationsRuleSpecific = { fieldName: 'Last Name', min: 6, max: 20 };
+const lastNameValidation: ValidationsRuleSpecific = { fieldName: 'Last Name', lengthMin: 6, lengthMax: 20 };
 
+type FormValues = {
+    lastName: string,
+    firstName: string,
+
+}
 
 
 
@@ -20,7 +26,8 @@ const Persons: FC = () => {
     const [lastName, setLastName] = useState<string>('');
 
     const onNameUpdate = (name: string) => setLastName(name);
-    const validationsRules = useValidationRule(ValidationsPreset.MandatoryNames, lastNameValidation);
+    const validationsRules = useValidationRule([ValidationsPreset.Names, ValidationsPreset.Mandatory], lastNameValidation);
+    const { register, handleSubmit, watch } = useForm<FormValues>({ mode: "onChange" });
 
     useEffect(() => {
         if (isFetching) return;
@@ -36,15 +43,17 @@ const Persons: FC = () => {
 
     return (<>
         {personData?.length > 0 && (
-            <>
+            <form>
                 <h1 className="person-header">Persons ({personData?.length})</h1>
                 <ComboBox label={"Combo box"} data={personData} />
-                <PInputBox value={lastName}
+                <PInputBox
+                    name={"lastName"}
+                    value={watch('lastName')}
                     label={"Last name"}
+                    register={register}
                     type={'text'}
-                    setValue={onNameUpdate}
                     validationsRule={validationsRules ?? undefined} />
-            </>
+            </form>
         )}
     </>);
 }

@@ -2,8 +2,8 @@ import { IContextProps, ThemeContext } from 'lib/context/theme/ThemeContext';
 import { ValidationResult } from 'lib/validations/formInputValidations';
 import { FC, useContext } from 'react';
 import '../../../style/a-style.css';
-import check from "./../../../assets/check.svg";
-import cross from "./../../../assets/cross.svg";
+import check from './../../../assets/check.svg';
+import cross from './../../../assets/cross.svg';
 import './pValidationBox.css';
 
 
@@ -20,14 +20,16 @@ const PValidationBox: FC<Props> = ({
       {validationResults &&
         validationResults.length > 0 &&
         validationResults.map((vr, index) =>
-          <div key={index} className={"p-validation-check"}>
-            <div className={"p-validation-img"}>
-              <img src={vr.isValid ? check : cross} className={vr.isValid ? "ok" : "ko"} />
+          <div key={index} className={`p-validation-check ${vr.isValid ? 'ok' : 'ko'}`}>
+            <div className={'p-validation-img'}>
+              <img src={vr.isValid ? check : cross} className={vr.isValid ? 'ok' : 'ko'} />
             </div>
-            <div className={"p-validation-text"}>
-              {vr.description.rule}
-              <span className={"p-validation-error-number"} >{vr.description.errorNumber}</span>
-              <span className={"p-validation-error-text"} >{vr.description.message}</span>
+            <div className={'p-validation-text'}>
+              {!vr.isValid && <span className={'p-validation-error-number'} >
+                {vr.description.rule}
+                {vr.description.errorNumber}</span>}
+              <span className={'p-validation-error-text'} >
+                {vr.isValid ? vr.description.validMessage : vr.description.message}</span>
             </div>
           </div>
         )}
