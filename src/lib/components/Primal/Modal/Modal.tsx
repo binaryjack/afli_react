@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import './modal.css';
+import './modal.scss';
 
 type ModalProps = {
   title: string;

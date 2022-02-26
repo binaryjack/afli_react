@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import './cardBody.css';
+import './cardBody.scss';
 
 const CardBody: FC = ({ children }) => {
   return <div className="card-body p-card-body">{children}</div>;

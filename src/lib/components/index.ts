@@ -1,5 +1,5 @@
 import BtnToggle from './BtnToggle/BtnToggle';
-import { ComboBox } from './ComboBox/comboBox.css';
+import ComboBox from './ComboBox/ComboBox';
 import CsLi from './CsLi/CsLi';
 import CsUl from './CsUl/CsUl';
 import MyArrComponent from './MyArrComponent/MyArrComponent';

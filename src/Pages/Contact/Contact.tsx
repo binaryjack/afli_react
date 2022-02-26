@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import './contact.css';
+import './contact.scss';
 
 
 

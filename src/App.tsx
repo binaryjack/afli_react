@@ -18,6 +18,7 @@ const App = () => {
           <Route path="/Projects" exact component={Projects} />
           <Route path="/Contact" exact component={Contact} />
           <Route path="/Persons" exact component={Persons} />
+          <Route path="/DataGrid" exact component={Persons} />
           <Route path="/ValidationVitrine" exact component={ValidationVitrine} />
         </Switch>
       </Router>

@@ -1,6 +1,6 @@
-import { IContextProps, ThemeContext } from 'lib/context/theme/ThemeContext';
+import { ThemeContext } from 'lib/context/theme/ThemeContext';
 import { FC, useContext } from 'react';
-import './btnToggle.css';
+import './BtnToggle.scss';
 
 const BtnToggle: FC = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);

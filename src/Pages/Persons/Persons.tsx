@@ -5,7 +5,7 @@ import { useValidationRule, ValidationsPreset, ValidationsRuleSpecific } from 'l
 import { FC, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ComboBox, { IComboBoxProperty, toComboBoxProperties } from '../../lib/components/ComboBox/ComboBox';
-import "./persons.css";
+import "./persons.scss";
 
 
 const lastNameValidation: ValidationsRuleSpecific = { fieldName: 'Last Name', lengthMin: 6, lengthMax: 20 };

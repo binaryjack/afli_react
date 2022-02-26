@@ -1,0 +1,9 @@
+{
+  "importSorter": {
+    "autoFormat": "onSave",
+    "quoteMark": "single",
+    "wrappingStyle": {
+      "maxBindingNamesPerLine": 2
+    }
+  }
+}

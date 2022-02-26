@@ -3,56 +3,70 @@
 ::after {
   box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 body {
   background-color: #ffffff;
   color: #1f1f1f;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out; }
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; }
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
 
 .dark-body {
   background: #333;
   color: #f1f1f1;
-  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out; }
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
 
 .dark-body:focus {
   background: #585858;
   color: #1a1a1a;
-  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out; }
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
 
 .debug-view {
   background: yellow;
   color: red;
   width: 100%;
-  height: 50px; }
+  height: 50px;
+}
 
 .base-components {
   padding: 5px;
   margin: 4px;
-  width: 200px; }
+  width: 200px;
+}
 
 .base-components-border {
   border-bottom: 1px solid black;
   border-top: none;
   border-left: none;
   border-right: none;
-  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out, border 0.4 ease-in-out; }
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out,
+    border 0.4 ease-in-out;
+}
 
 .base-components-border:focus {
   outline: none;
   border-bottom: 1px solid #143c86;
   background: #cccccc;
   box-shadow: none;
-  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out, border 0.4 ease-in-out; }
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out,
+    border 0.4 ease-in-out;
+}
 
 .base-components-border-daky {
   border-bottom: 1px solid #6e6e6e;
-  background: #2e2e2e; }
+  background: #2e2e2e;
+}
 
 .base-components-border-daky:focus {
   border-bottom: 1px solid #a8a8a8;
-  background: #161616; }
+  background: #161616;
+}

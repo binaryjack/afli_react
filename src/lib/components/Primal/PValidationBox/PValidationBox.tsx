@@ -1,10 +1,10 @@
 import { IContextProps, ThemeContext } from 'lib/context/theme/ThemeContext';
 import { ValidationResult } from 'lib/validations/formInputValidations';
 import { FC, useContext } from 'react';
-import '../../../style/a-style.css';
+import '../../../style/a-style.scss';
 import check from './../../../assets/check.svg';
 import cross from './../../../assets/cross.svg';
-import './pValidationBox.css';
+import './pValidationBox.scss';
 
 
 type Props = {

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import './projects.css';
+import './projects.scss';
 
 const Projects: FC = () => {
   return <h1 className="pge-projects">Projects</h1>;

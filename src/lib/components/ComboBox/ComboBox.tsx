@@ -1,7 +1,7 @@
 import { useAppSelector } from 'app/hooks';
 import { IContextProps, ThemeContext } from 'lib/context/theme/ThemeContext';
 import { FC, useContext, useState } from 'react';
-import "./comboBox.css";
+import "./ComboBox.scss";
 
 export interface IComboBoxProperty {
     id: string | number;

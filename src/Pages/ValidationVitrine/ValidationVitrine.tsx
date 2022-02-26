@@ -1,7 +1,7 @@
 import PValidationBox from 'lib/components/primal/PValidationBox/PValidationBox';
 import { prepareRules, validateRules, ValidationsPreset, ValidationsRuleSpecific } from 'lib/validations/formInputValidations';
 import { FC } from 'react';
-import "./validationVitrine.css";
+import "./validationVitrine.scss";
 
 const ValidationVitrine: FC = () => {
 

@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import chevron from './chevron.svg';
-import './pExpander.css';
+import './pExpander.scss';
 
 const PExpander: FC = () => {
   const [toggle, setToggle] = useState(false);

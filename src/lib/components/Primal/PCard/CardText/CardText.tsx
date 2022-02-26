@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import "./cardText.css";
+import "./cardText.scss";
 
 const CardText: FC = ({ children }) => {
     return (

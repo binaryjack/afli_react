@@ -1,9 +1,9 @@
 import { IContextProps, ThemeContext } from 'lib/context/theme/ThemeContext';
 import { useValidations, ValidationsRule } from 'lib/validations/formInputValidations';
 import { FC, useContext, useRef, useState } from 'react';
-import '../../../style/a-style.css';
+import '../../../style/a-style.scss';
 import PValidationBox from '../PValidationBox/PValidationBox';
-import './pInputBox.css';
+import './pInputBox.scss';
 
 type Props = {
   value: string;
