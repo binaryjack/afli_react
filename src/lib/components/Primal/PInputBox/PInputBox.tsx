@@ -1,10 +1,28 @@
-import { IContextProps, ThemeContext } from 'lib/context/theme/ThemeContext';
-import { useValidations, ValidationsRule } from 'lib/validations/formInputValidations';
-import { FC, useCallback, useContext, useEffect, useState } from 'react';
-import { FieldValues, UseFormRegister } from 'react-hook-form';
 import '../../../style/a-style.scss';
-import PValidationBox from '../PValidationBox/PValidationBox';
 import './pInputBox.scss';
+
+import {
+  FC,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
+
+import {
+  IContextProps,
+  ThemeContext,
+} from 'lib/context/theme/ThemeContext';
+import {
+  useValidations,
+  ValidationsRule,
+} from 'lib/validations/formInputValidations';
+import {
+  FieldValues,
+  UseFormRegister,
+} from 'react-hook-form';
+
+import PValidationBox from '../PValidationBox/PValidationBox';
 
 type Props = {
   register: UseFormRegister<FieldValues>;
@@ -38,6 +56,7 @@ const PInputBox: FC<Props> = (
   useEffect(() => {
     console.log(isValueOrFocus);
   }, [focus, value])
+
 
   return (
     <div className={`p-input-root`}>

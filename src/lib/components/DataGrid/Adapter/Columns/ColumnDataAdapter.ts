@@ -4,7 +4,7 @@ import {
   DataTypes,
 } from 'core/model/DataGridModel';
 
-import { TableAdapter } from '../../DataGridUtils';
+import { DataGridAdapter } from '../../DataGridUtils';
 import {
   DataRowMetaModel,
   HeaderRowMetaModel,
@@ -39,7 +39,7 @@ export interface DataRow {
 
 export const DataAdapter = <T>(data: DataApi<T>): DataGridModel => {
 
-    const dataGridMock = TableAdapter("Customers Mock")
+    const dataGridMock = DataGridAdapter("Customers Mock")
     const headerRow: ColumnDataModel[] = []
 
     for (let i = 0; i < data.columns.length; i++) {

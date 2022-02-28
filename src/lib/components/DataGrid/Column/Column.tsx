@@ -4,7 +4,7 @@ import { FC } from 'react';
 
 import { ColumnDataModel } from 'core/model/DataGridModel';
 
-import Cell from '../cell/Cell';
+import Cell from '../Cell/Cell';
 
 export type ColumnProps = {
   column: ColumnDataModel;

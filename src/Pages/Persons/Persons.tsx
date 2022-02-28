@@ -1,12 +1,25 @@
+import './persons.scss';
+
+import {
+  FC,
+  useEffect,
+  useState,
+} from 'react';
+
 import Person from 'core/entities/Person';
 import { useGetAllQuery } from 'features/person/person-api-slice';
 import PInputBox from 'lib/components/primal/PInputBox/PInputBox';
-import { useValidationRule, ValidationsPreset, ValidationsRuleSpecific } from 'lib/validations/formInputValidations';
-import { FC, useEffect, useState } from 'react';
+import {
+  useValidationRule,
+  ValidationsPreset,
+  ValidationsRuleSpecific,
+} from 'lib/validations/formInputValidations';
 import { useForm } from 'react-hook-form';
-import ComboBox, { IComboBoxProperty, toComboBoxProperties } from '../../lib/components/ComboBox/ComboBox';
-import "./persons.scss";
 
+import ComboBox, {
+  IComboBoxProperty,
+  toComboBoxProperties,
+} from '../../lib/components/ComboBox/ComboBox';
 
 const lastNameValidation: ValidationsRuleSpecific = { fieldName: 'Last Name', lengthMin: 6, lengthMax: 20 };
 
