@@ -20,27 +20,25 @@ export enum Validations {
 export type ValidationResult = {
     name: Validations;
     hasHint: boolean;
+    method?: (options: ValidationOptions) => boolean;
     isValid?: boolean;
     description: PValidationMessage;
 }
 
-export type ValidationsRuleSpecific = {
-    value?: any;
-    fieldName?: string;
+export type ValidationOptions = {
     min?: number;
     max?: number;
     start?: string;
     end?: string;
     lengthMin?: number;
     lengthMax?: number;
-    example?: string; // must be cultural agnostic
 }
 
-export type ValidationRule = ValidationsRuleSpecific & {
+export type ValidationRule = ValidationOptions & {
     validationType: Validations
 }
 
-export type ValidationsRule = ValidationsRuleSpecific & {
+export type ValidationsRule = ValidationOptions & {
     validationTypes: Validations[]
 }
 
@@ -52,119 +50,105 @@ export type ValidationCollection = {
 
 
 
-const isNotNullEmptyOrUndefined = (specific: ValidationsRuleSpecific): boolean => !(!specific.value || specific.value.length === 0);
-const validationEmptyOrUndefined = (specific: ValidationsRuleSpecific): PValidationMessage => {
-    specific.example = Validations.Mandatory
+const validationEmptyOrUndefined = (options: ValidationOptions) => (value: string): PValidationMessage => {
+
     return {
         errorNumber: 1,
         hasHint: true,
-        message: `${specific.fieldName} field is mandatory`,
+        message: `${Validations.Mandatory} field is mandatory`,
         rule: `You must enter a valid value in this field`,
         validMessage: `good`
     };
 }
 
-const isValidName = (specific: ValidationsRuleSpecific): boolean => new RegExp(/^[a-zA-Z\\s-]+$/).test(specific.value);
-const validateValidName = (specific: ValidationsRuleSpecific): PValidationMessage => {
-    specific.example = Validations.Names
+const validateValidName = (options: ValidationOptions): PValidationMessage => {
+
     return {
         errorNumber: 2,
         hasHint: true,
-        message: `${specific.fieldName} has an incorrect Name`,
-        rule: `Name must be fo like the following format : ${specific?.example} `,
+        message: `${Validations.Names} has an incorrect Name`,
+        rule: `Name must be fo like the following format : ${Validations.Names} `,
         validMessage: `good`
     };
 }
+const validateEmail = (options: ValidationOptions): PValidationMessage => {
 
-const isEmail = (specific: ValidationsRuleSpecific): boolean => new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/).test(specific.value);
-const validateEmail = (specific: ValidationsRuleSpecific): PValidationMessage => {
-    specific.example = Validations.Email
     return {
         errorNumber: 3,
         hasHint: true,
-        message: `${specific.fieldName} has an incorrect E-Mail`,
-        rule: `Email must be like the following format : ${specific?.example} `,
+        message: `${Validations.Email} has an incorrect E-Mail`,
+        rule: `Email must be like the following format : ${Validations.Email}`,
         validMessage: `good`
     };
 }
 
-const isNumber = (specific: ValidationsRuleSpecific): boolean => new RegExp(/^[0-9]+$/).test(specific.value);
-const validateNumber = (specific: ValidationsRuleSpecific): PValidationMessage => {
-    specific.example = Validations.Number
+const validateNumber = (options: ValidationOptions): PValidationMessage => {
     return {
         errorNumber: 4,
         hasHint: true,
-        message: `${specific.fieldName} Incorrect Number`,
+        message: `${Validations.Number} Incorrect Number`,
         rule: `Number is not in a recognised format`,
         validMessage: `good`
     };
 }
 
-const isPhoneNumber = (specific: ValidationsRuleSpecific): boolean => new RegExp(/^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i).test(specific.value);
-const validatePhone = (specific: ValidationsRuleSpecific): PValidationMessage => {
-    specific.example = Validations.Phone
+const validatePhone = (options: ValidationOptions): PValidationMessage => {
     return {
         errorNumber: 5,
         hasHint: true,
-        message: `${specific.fieldName} as an incorrect phone number format`,
+        message: `${Validations.Phone} as an incorrect phone number format`,
         rule: `Phone number must be like: +## ## ### ## ##`,
         validMessage: `good`
     };
 }
 
-const isRangeOverflows = (specific: ValidationsRuleSpecific): boolean => (specific.value > !specific.max) || (specific.value < !specific.min)
-const validateRangeOverflow = (specific: ValidationsRuleSpecific): PValidationMessage => {
-    specific.example = Validations.LengthRange
+const validateRangeOverflow = (options: ValidationOptions): PValidationMessage => {
     return {
         errorNumber: 6,
         hasHint: true,
-        message: `${specific.fieldName} value overflows`,
-        rule: `The value cannot be less than ${specific.min} or greater than ${specific.max}`,
+        message: `${Validations.LengthRange} value overflows`,
+        rule: `The value cannot be less than ${options.min} or greater than ${options.max}`,
         validMessage: `good`
     };
 }
 
-const isLengthRangeOverflows = (specific: ValidationsRuleSpecific): boolean => ((specific.value && specific.value.length > 0) ||
-    ((specific.value > !specific.lengthMax) || (specific.value < !specific.lengthMin)))
 
-const validateLengthRangeOverflow = (specific: ValidationsRuleSpecific): PValidationMessage => {
-    specific.example = Validations.LengthRange
+const validateLengthRangeOverflow = (options: ValidationOptions): PValidationMessage => {
     return {
         errorNumber: 7,
         hasHint: true,
-        message: `${specific.fieldName} length overflows`,
-        rule: `The length cannot be less than ${specific.lengthMin} or greater than ${specific.lengthMax}`,
+        message: `${Validations.LengthRange} length overflows`,
+        rule: `The length cannot be less than ${options.lengthMin} or greater than ${options.lengthMax}`,
         validMessage: `good`
     };
 }
 
-const idDateOverflows = (specific: ValidationsRuleSpecific): boolean => (specific.value > !specific.end) || (specific.value < !specific.start)
-const validateDateRangeOverflow = (specific: ValidationsRuleSpecific): PValidationMessage => {
-    specific.example = Validations.LengthRange
+const validateDateRangeOverflow = (options: ValidationOptions): PValidationMessage => {
+
     return {
         errorNumber: 8,
         hasHint: true,
-        message: `${specific.fieldName} date range overflows`,
-        rule: `The date cannot be before than ${specific.start} or after than ${specific.end}`,
+        message: `${Validations.LengthRange} date range overflows`,
+        rule: `The date cannot be before than ${options.start} or after than ${options.end}`,
         validMessage: `good`
     };
 }
 
 export type ValidationTopic = {
     name: Validations;
-    validationMethod: (specific: ValidationsRuleSpecific) => boolean;
-    validatedDataMethod: (specific: ValidationsRuleSpecific) => PValidationMessage;
+    validationMethod: (options: ValidationOptions) => boolean;
+    validatedDataMethod: (options: ValidationOptions) => PValidationMessage;
 }
 
 export const ValidationElement: ValidationTopic[] = [
-    { name: Validations.Names, validationMethod: isValidName, validatedDataMethod: validateValidName },
-    { name: Validations.Mandatory, validationMethod: isNotNullEmptyOrUndefined, validatedDataMethod: validationEmptyOrUndefined },
-    { name: Validations.Email, validationMethod: isEmail, validatedDataMethod: validateEmail },
-    { name: Validations.Number, validationMethod: isNumber, validatedDataMethod: validateNumber },
-    { name: Validations.Phone, validationMethod: isPhoneNumber, validatedDataMethod: validatePhone },
-    { name: Validations.NumberRange, validationMethod: isRangeOverflows, validatedDataMethod: validateRangeOverflow },
-    { name: Validations.DateRange, validationMethod: idDateOverflows, validatedDataMethod: validateDateRangeOverflow },
-    { name: Validations.LengthRange, validationMethod: isLengthRangeOverflows, validatedDataMethod: validateLengthRangeOverflow },
+    // { name: Validations.Names, validationMethod: isValidName, validatedDataMethod: validateValidName },
+    // { name: Validations.Mandatory, validationMethod: isNotNullEmptyOrUndefined, validatedDataMethod: validationEmptyOrUndefined },
+    // { name: Validations.Email, validationMethod: isEmail, validatedDataMethod: validateEmail },
+    // { name: Validations.Number, validationMethod: isNumber, validatedDataMethod: validateNumber },
+    // { name: Validations.Phone, validationMethod: isPhoneNumber, validatedDataMethod: validatePhone },
+    // { name: Validations.NumberRange, validationMethod: isRangeOverflows, validatedDataMethod: validateRangeOverflow },
+    // { name: Validations.DateRange, validationMethod: idDateOverflows, validatedDataMethod: validateDateRangeOverflow },
+    // { name: Validations.LengthRange, validationMethod: isLengthRangeOverflows, validatedDataMethod: validateLengthRangeOverflow },
 ];
 
 export enum ValidationsPreset {
@@ -196,10 +180,10 @@ export const validationPresets: ValidationPresetTopic[] = [
 
 // validation rule Hook 
 // this hook prepare the rules regarding the field type.
-export const useValidationRule = (presets: ValidationsPreset[], specifics?: ValidationsRuleSpecific): ValidationsRule | null => {
+export const useValidationRule = (presets: ValidationsPreset[], optionss?: ValidationOptions): ValidationsRule | null => {
     const [result, setResult] = useState<ValidationsRule | null>(null);
     useEffect(() => {
-        setResult(prepareRules(presets, specifics));
+        setResult(prepareRules(presets, optionss));
     }, [])
 
     return result;
@@ -220,9 +204,9 @@ export const useValidations = (value: any, rules?: ValidationsRule): ValidationR
     return results;
 }
 
-export const prepareRules = (presets: ValidationsPreset[], specifics?: ValidationsRuleSpecific) => {
+export const prepareRules = (presets: ValidationsPreset[], optionss?: ValidationOptions) => {
 
-    const outputPreset: ValidationsRule = { validationTypes: [], ...specifics };
+    const outputPreset: ValidationsRule = { validationTypes: [], ...optionss };
 
     presets.forEach(preset => {
 
@@ -235,11 +219,9 @@ export const prepareRules = (presets: ValidationsPreset[], specifics?: Validatio
 
 export const validateRules = (value: any, currentState: ValidationResult[], rules?: ValidationsRule): ValidationResult[] | null => {
     if (!rules || !rules.validationTypes) return [];
-    rules.value = value;
+
 
     console.log(`rules.validationTypes`, rules.validationTypes, currentState);
-
-    rules.value
 
     let validationCollection: ValidationResult[] = [...currentState];
 
@@ -257,7 +239,8 @@ export const validateRules = (value: any, currentState: ValidationResult[], rule
             hasHint: ruleSet.hasHint,
             name: validationMessage.name,
             isValid: validationMessage.validationMethod(rules),
-            description: ruleSet
+            description: ruleSet,
+
         };
         // append to collection
         validationCollection.push(unitResult);
@@ -286,7 +269,6 @@ const validateSchema = (schema: Schema): boolean => {
 
     Object.keys(schema.sequence).forEach(key => {
         console.log(schema.sequence[Number.parseInt(key)])
-
     });
 
     return true;

@@ -1,8 +1,8 @@
 import {
   ColumnDataModel,
   DataGridModel,
-} from '../model/tableModel';
-import { TableAdapter } from '../table/TableUtils';
+} from 'core/model/DataGridModel';
+import { DataGridAdapter } from 'lib/components/DataGrid/DataGridUtils';
 
 const createTestMock = (): DataGridModel => {
 
@@ -11,7 +11,7 @@ const createTestMock = (): DataGridModel => {
     const c3: ColumnDataModel[] = [{ order: 0, value: "3" }]
     const c4: ColumnDataModel[] = [{ order: 0, value: "4" }]
 
-    const dataGridMock = TableAdapter("Numbers")
+    const dataGridMock = DataGridAdapter("Numbers")
 
     if (dataGridMock && dataGridMock.newRow) {
 

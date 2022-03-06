@@ -57,6 +57,11 @@ const PValidationBox: FC<Props> = ({
       {validationResults &&
         validationResults.map((vr, index) =>
           <Fragment key={index}>
+            <br />
+            {vr.hasHint ? 'hasHint' : 'no Hint'}
+            <br />
+            {vr.isValid === undefined ? '' : vr.isValid ? 'isValid' : 'no Valid'}
+
 
             {vr.hasHint && vr.isValid === undefined &&
               <div key={index} className={`p-validation-check ok`}>

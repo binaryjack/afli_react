@@ -1,12 +1,13 @@
 // __tests__/fetch.test.js
 import '@testing-library/jest-dom';
 
+import { dataFromApi } from 'lib/mock/api/data';
+
 import {
   render,
   screen,
 } from '@testing-library/react';
 
-import { dataFromApi } from '../../api/data';
 import {
   DataAdapter,
   DataRow,
@@ -17,25 +18,25 @@ const dataTable = DataAdapter<DataRow>(dataFromApi)
 
 
 test('display Cell', () => {
-    render(<Cell id={"custom-cell"} column={dataTable.rows[1].columns[1]} edit={false} />)
-    expect(screen.getAllByTestId('custom-cell-test')[0].innerHTML).toEqual('Piana')
+  render(<Cell id={"custom-cell"} column={dataTable.rows[1].columns[1]} edit={false} />)
+  expect(screen.getAllByTestId('custom-cell-test')[0].innerHTML).toEqual('Piana')
 })
 
 
 test('display Input Cell', () => {
-    dataTable.rows[1].columns[1].editable = true
+  dataTable.rows[1].columns[1].editable = true
 
-    render(<Cell id={"custom-cell"} column={dataTable.rows[1].columns[1]} edit={true} />)
-    expect(screen.getAllByTestId('custom-cell-test-edit')[0]).toBeTruthy()
-    expect(screen.getAllByTestId('custom-cell-test-edit')[0]).toHaveDisplayValue("Piana")
+  render(<Cell id={"custom-cell"} column={dataTable.rows[1].columns[1]} edit={true} />)
+  expect(screen.getAllByTestId('custom-cell-test-edit')[0]).toBeTruthy()
+  expect(screen.getAllByTestId('custom-cell-test-edit')[0]).toHaveDisplayValue("Piana")
 })
 
 test('display Input Cell', () => {
-    dataTable.rows[1].columns[1].editable = true
+  dataTable.rows[1].columns[1].editable = true
 
-    render(<Cell id={"custom-cell"} column={dataTable.rows[1].columns[1]} edit={true} />)
-    expect(screen.getAllByTestId('custom-cell-test-edit')[0]).toBeTruthy()
-    expect(screen.getAllByTestId('custom-cell-test-edit')[0]).toHaveDisplayValue("Piana")
+  render(<Cell id={"custom-cell"} column={dataTable.rows[1].columns[1]} edit={true} />)
+  expect(screen.getAllByTestId('custom-cell-test-edit')[0]).toBeTruthy()
+  expect(screen.getAllByTestId('custom-cell-test-edit')[0]).toHaveDisplayValue("Piana")
 })
 
 // const server = setupServer(

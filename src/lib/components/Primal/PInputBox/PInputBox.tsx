@@ -50,7 +50,7 @@ const PInputBox: FC<Props> = (
 
   const onGotFocus = useCallback((active: boolean) => {
     if (isValueOrFocus) return;
-    setFocus(state => state = active)
+    setFocus(active)
   }, []);
 
   useEffect(() => {

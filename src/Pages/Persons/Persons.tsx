@@ -11,8 +11,8 @@ import { useGetAllQuery } from 'features/person/person-api-slice';
 import PInputBox from 'lib/components/primal/PInputBox/PInputBox';
 import {
   useValidationRule,
+  ValidationOptions,
   ValidationsPreset,
-  ValidationsRuleSpecific,
 } from 'lib/validations/formInputValidations';
 import { useForm } from 'react-hook-form';
 
@@ -21,12 +21,11 @@ import ComboBox, {
   toComboBoxProperties,
 } from '../../lib/components/ComboBox/ComboBox';
 
-const lastNameValidation: ValidationsRuleSpecific = { fieldName: 'Last Name', lengthMin: 6, lengthMax: 20 };
+const lastNameValidation: ValidationOptions = { lengthMin: 6, lengthMax: 20 };
 
 type FormValues = {
     lastName: string,
     firstName: string,
-
 }
 
 

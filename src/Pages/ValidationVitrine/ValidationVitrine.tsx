@@ -1,15 +1,23 @@
-import PValidationBox from 'lib/components/primal/PValidationBox/PValidationBox';
-import { prepareRules, validateRules, ValidationsPreset, ValidationsRuleSpecific } from 'lib/validations/formInputValidations';
+import './validationVitrine.scss';
+
 import { FC } from 'react';
-import "./validationVitrine.scss";
+
+import PValidationBox
+  from 'lib/components/primal/PValidationBox/PValidationBox';
+import {
+  prepareRules,
+  validateRules,
+  ValidationOptions,
+  ValidationsPreset,
+} from 'lib/validations/formInputValidations';
 
 const ValidationVitrine: FC = () => {
 
-    const mandatorySpecific: ValidationsRuleSpecific = {}
+    const mandatorySpecific: ValidationOptions = {}
     const mandatoryRule = prepareRules([ValidationsPreset.Mandatory], mandatorySpecific);
 
 
-    const eMailSpecific: ValidationsRuleSpecific = {}
+    const eMailSpecific: ValidationOptions = {}
     const eMailSRule = prepareRules([ValidationsPreset.Emails], eMailSpecific);
 
     return (
