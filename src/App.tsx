@@ -18,12 +18,12 @@ const App = () => {
         <BtnToggle />
         <Navbar />
         <Routes>
-          <Route path="/Home" element={Home} />
-          <Route path="/Projects" element={Projects} />
-          <Route path="/Contact" element={Contact} />
-          <Route path="/Persons" element={Persons} />
-          <Route path="/DataGrid" element={Persons} />
-          <Route path="/ValidationVitrine" element={ValidationVitrine} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Projects" element={<Projects />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/Persons" element={<Persons />} />
+          <Route path="/DataGrid" element={<Persons />} />
+          <Route path="/ValidationVitrine" element={<ValidationVitrine />} />
         </Routes>
       </BrowserRouter>
     </>
