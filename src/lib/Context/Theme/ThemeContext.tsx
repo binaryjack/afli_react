@@ -1,4 +1,8 @@
-import React, { createContext, FC, useState } from 'react';
+import React, {
+  createContext,
+  FC,
+  useState,
+} from 'react';
 
 export type IContextProps = {
   theme: boolean;
@@ -7,7 +11,7 @@ export type IContextProps = {
 
 export const ThemeContext = createContext<IContextProps>({
   theme: false,
-  toggleTheme: () => {},
+  toggleTheme: () => { },
 });
 
 const ThemeContextProvider: FC = ({ children }) => {

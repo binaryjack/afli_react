@@ -28,8 +28,6 @@ type FormValues = {
     firstName: string,
 }
 
-
-
 const Persons: FC = () => {
 
     const { data, error, isFetching } = useGetAllQuery();
@@ -39,7 +37,7 @@ const Persons: FC = () => {
 
     const onNameUpdate = (name: string) => setLastName(name);
     const validationsRules = useValidationRule([ValidationsPreset.Names, ValidationsPreset.Mandatory], lastNameValidation);
-    const { register, handleSubmit, watch } = useForm<FormValues>({ mode: "onChange" });
+    const { register, handleSubmit, watch } = useForm<any>({ mode: "onChange" });
 
     useEffect(() => {
         if (isFetching) return;

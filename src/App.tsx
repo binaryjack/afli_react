@@ -6,23 +6,26 @@ import Persons from 'pages/Persons/Persons';
 import Projects from 'pages/Projects/Projects';
 import ValidationVitrine from 'pages/ValidationVitrine/ValidationVitrine';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Route,
+  Routes,
 } from 'react-router-dom';
 
 const App = () => {
   return (
     <>
-      <Router>
+      <BrowserRouter>
         <BtnToggle />
         <Navbar />
-        <Route path="/" element={Home} />
-        <Route path="/Projects" element={Projects} />
-        <Route path="/Contact" element={Contact} />
-        <Route path="/Persons" element={Persons} />
-        <Route path="/DataGrid" element={Persons} />
-        <Route path="/ValidationVitrine" element={ValidationVitrine} />
-      </Router>
+        <Routes>
+          <Route path="/Home" element={Home} />
+          <Route path="/Projects" element={Projects} />
+          <Route path="/Contact" element={Contact} />
+          <Route path="/Persons" element={Persons} />
+          <Route path="/DataGrid" element={Persons} />
+          <Route path="/ValidationVitrine" element={ValidationVitrine} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };
